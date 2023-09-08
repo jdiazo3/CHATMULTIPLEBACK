@@ -28,9 +28,8 @@ import chat.multiple.edu.Service.UsuarioService;
  */
 
  /**
- *Controlador que responde al llamado de http://localhost:8090/personas
  */
-@CrossOrigin(origins ="http://localhost:4200",maxAge = 3600)
+@CrossOrigin(origins ="https://dbt3llfc-4200.use2.devtunnels.ms/",maxAge = 3600)
 @RestController
 @RequestMapping("/personas")
 public class PersonaController {
@@ -50,12 +49,10 @@ public class PersonaController {
     @PostMapping
     public ResponseEntity<?> create(@RequestBody Usuario p){
         Integer docu = p.getPersona().getNumdoc();
-        Usuario adicionU = null;
         Usuario newUsuario = null;
         Persona newPersona = null;
             if(!personaService.findByNumdoc(docu).isPresent() &&  !usuarioService.findByUser(p.getUser()).isPresent() ){
                 newPersona = p.getPersona();
-                usuarioService.save(adicionU);
                 Persona newPersonacreada = crearpersonanueva(newPersona);;
                 newUsuario=p;
                 newUsuario.setPersona(newPersonacreada);

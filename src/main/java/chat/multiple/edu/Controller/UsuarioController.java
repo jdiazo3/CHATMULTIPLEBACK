@@ -33,9 +33,8 @@ import io.jsonwebtoken.SignatureAlgorithm;
  */
 
 /**
- *Controlador que responde al llamado de http://localhost:8090/usuarios
  */
-@CrossOrigin(origins ="http://localhost:4200",maxAge = 3600)
+@CrossOrigin(origins ="https://dbt3llfc-4200.use2.devtunnels.ms/",maxAge = 3600)
 @RestController
 @RequestMapping("/usuarios")
 public class UsuarioController {

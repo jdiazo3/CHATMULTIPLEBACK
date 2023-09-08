@@ -35,9 +35,6 @@ public class Mensaje {
     @Column(length = 25)
     private String mensaje;
 
-    @Column(length = 255)
-    private String orden;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idusu", referencedColumnName = "id")
     private Usuario usuario;
@@ -51,17 +48,6 @@ public class Mensaje {
     public void setMensaje(String mensaje) {
         this.mensaje = mensaje;
     }
-
-
-    public String getOrden() {
-        return orden;
-    }
-
-
-    public void setOrden(String orden) {
-        this.orden = orden;
-    }
-
 
     public Usuario getUsuario() {
         return usuario;

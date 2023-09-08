@@ -22,7 +22,7 @@ public interface MensajeRepository extends JpaRepository<Mensaje ,Long>{
 
     @Transactional(readOnly = true)
     @Query(
-        value = "select * from mensaje order by orden asc",
+        value = "select * from mensaje order by id asc",
         nativeQuery = true
         )
         List<Mensaje>findByMensajeOrderBy();
